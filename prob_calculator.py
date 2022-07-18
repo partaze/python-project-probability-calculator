@@ -1,16 +1,14 @@
 import copy
 import random
-# Consider using the modules imported above.
 
 class Hat:
   """@AUTHOR Cheryl Vadivello.
-  Class Hat instantiates a Hat object which contains diffent 
+  Class Hat instantiates a Hat object which contains different 
   coloured balls.
   
   The number and color of balls are assigned upon hat creation
   depending on the arguments passed to the constructor.
-  This class calculates the probability of drawing a given number
-  of random colored balls."""
+  This class randomly draws a given number of colored balls."""
 
   def __init__(self,**balls):
     """Attributes
@@ -52,10 +50,7 @@ def experiment(hat, expected_balls, num_balls_drawn, num_experiments):
   match = 0 
   for i in range(num_experiments):
     drawn = Hat.draw(copy.deepcopy(hat),num_balls_drawn)  
-    print(drawn)
     drawn_balls = makeDict(drawn)
-    print(expected_balls)
-    
     match_check = []
     for item in expected_balls: 
       if item not in drawn_balls.keys():
